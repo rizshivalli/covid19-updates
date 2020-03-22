@@ -29,7 +29,6 @@ export default function App() {
   const [worldData, setWorldData] = useState({});
   const [date, setDate] = useState(1584724653093);
   const [search, setSearch] = useState("");
-  const [anchorEl, setAnchorEl] = useState(null);
   const classes = useStyles();
   const styles = {
     flexEnd: {
