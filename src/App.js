@@ -41,6 +41,10 @@ export default function App() {
     flagStyles: { margin: "3px", marginRight: "20px" }
   };
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   useEffect(() => {
     axios.get("https://corona.lmao.ninja/countries").then(res => {
       setCountryData([...res.data]);
@@ -83,7 +87,7 @@ export default function App() {
         <Grid container>
           <AppBar
             position="static"
-            color="white"
+            color="transparent"
             style={{ marginBottom: "1%" }}
           >
             <Toolbar>
@@ -94,7 +98,7 @@ export default function App() {
                 href="https://github.com/rizshivalli/covid19-updates"
                 target="_blank"
               >
-                <GitHubIcon />
+                <GitHubIcon style={{ color: "white" }} />
               </IconButton>
             </Toolbar>
           </AppBar>
@@ -164,23 +168,26 @@ export default function App() {
 
           <Grid item md={12} xs={12} className="heading-wrapper">
             <Grid container>
-              <Grid item xs={12} md={4} className="flex-start">
+              <Grid item xs={12} md={2} className="flex-start">
                 <p className="caption">Country</p>
               </Grid>
 
-              <Grid item md={2} xs={3} className="flex-start">
+              <Grid item md={2} xs={2} className="flex-start">
                 <p className="caption">Cases</p>
               </Grid>
 
-              <Grid item md={2} xs={3} className="flex-start">
+              <Grid item md={2} xs={2} className="flex-start">
                 <p className="caption">Recovered</p>
               </Grid>
 
-              <Grid item md={2} xs={3} className="flex-start">
+              <Grid item md={2} xs={2} className="flex-start">
                 <p className="caption">Recovery Rate</p>
               </Grid>
 
-              <Grid item md={2} xs={3} className="flex-start">
+              <Grid item md={2} xs={2} className="flex-start">
+                <p className="caption">Death</p>
+              </Grid>
+              <Grid item md={2} xs={2} className="flex-start">
                 <p className="caption">Death Rate</p>
               </Grid>
             </Grid>
@@ -205,7 +212,7 @@ export default function App() {
               return (
                 <Grid key={index} item md={12}>
                   <Grid container>
-                    <Grid item xs={12} md={4} className="flex-start">
+                    <Grid item xs={12} md={2} className="flex-start">
                       <img
                         src={image}
                         width="50px"
@@ -251,6 +258,17 @@ export default function App() {
                       >
                         <div>
                           <p className="caption text-hide">Death</p>
+                          <p className="title">{item.deaths} </p>
+                        </div>
+                      </div>
+                    </Grid>
+                    <Grid item xs={3} md={2} className="flex-start">
+                      <div
+                        className="country-data-item"
+                        style={{ backgroundColor: "#e74c3c" }}
+                      >
+                        <div>
+                          <p className="caption text-hide">Death Rate</p>
                           <p className="title">{deathsRate} %</p>
                         </div>
                       </div>
