@@ -34,7 +34,6 @@ export default function App() {
       <AppBar position="static">
         <WorldData />
         <Tabs
-          centered
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"

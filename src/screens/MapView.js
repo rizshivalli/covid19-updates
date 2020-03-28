@@ -264,7 +264,6 @@ const MapView = () => {
               <option value="recovered">Recovered</option>
               <option value="deaths">Deaths</option>
             </select>
-            <ChevronDown size={"150px"} color="red" />
           </div>
         </div>
       </div>
