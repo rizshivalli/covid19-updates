@@ -27,7 +27,7 @@ const customMarker = (ratio, rgb) =>
 
 const axios = require("axios");
 
-const apiKey = "74666fb8famsh29671ce8aaa6c14p119c2ejsn26472c4cf0dc";
+const apiKey = "YOUR_API_KEY";
 
 const MapView = () => {
   const [selected, setSelected] = useState("cases"),
