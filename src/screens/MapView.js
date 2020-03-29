@@ -9,13 +9,7 @@ import worldGeoJSON from "geojson-world-map";
 import "../styles/mapStyles.css";
 import countryCode from "../utils/countrycode-latlong";
 import "leaflet/dist/leaflet.css";
-import {
-  Grid,
-  CircularProgress,
-  Select,
-  MenuItem,
-  InputLabel
-} from "@material-ui/core";
+import { Grid, CircularProgress, Select, MenuItem } from "@material-ui/core";
 
 import { BootstrapInput } from "../components";
 
@@ -39,7 +33,6 @@ const apiKey = "74666fb8famsh29671ce8aaa6c14p119c2ejsn26472c4cf0dc";
 const MapView = () => {
   const [selected, setSelected] = useState("cases"),
     [data, setData] = useState([]),
-    [dataTotal, setDataTotal] = useState([]),
     [loading, setLoading] = useState(true);
 
   const handleChange = e => {
